@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <!-- // nhung link angular-route.min.js // -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+
+</head>
+<body ng-app="myapp">
+    <h2>ng-route demo</h2>
+    <hr>
+    <div id="menu">
+        <ul>
+            <li> <a href="#/!">Lily</a></li>
+            <li> <a href="#!b">Dahlia</a></li>
+            <li> <a href="#!c">Orchids</a></li>
+        </ul>
+    </div>
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/", {templateUrl: "d02_repeat.html"})
+            .when("/b", {templateUrl: "d02_repeat2.html"})
+            .when("/c", {templateUrl: "d02_date.html"})
+        })
+    </script>
+         
+</body>
+</html>

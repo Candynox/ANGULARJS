@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+</head>
+<body>
+    <h2>Validation Example</h2>
+    <hr>
+    <form action="../d02/d02_repeat.html" 
+    ng-app="myapp" ng-controller="valicontrol" name="myform" novalidate>
+
+    <p>Username:
+        <br>
+        <input type="text" name="name" ng-model="name" required>
+        <span style="color: red;" ng-show="myform.name.$dirty && myform.name.$invalid">
+            <span ng-show="myform.name.$error.required">Username is required</span>
+    </span>
+    </p>
+
+    <p>Email:
+        <br>
+        <input type="email" name="email" ng-model="email" required>
+        <span style="color: red;" ng-show="myform.email.$dirty && myform.email.$invalid">
+            <span ng-show="myform.email.$error.required">Email is required</span>
+            <span ng-show="myform.email.$error.email">Invalid email address</span>
+    </span>
+    </p>
+
+    <p>Final mark:
+        <br>
+        <input type="number" name="mark" ng-model="mark" min="0" max="100" required>
+        <span style="color: red;" ng-show="myform.mark.$dirty && myform.mark.$invalid">
+            <span ng-show="myform.mark.$error.required">Mark is required</span>
+            <span ng-show="myform.mark.$error.email">Invalid final mark</span>
+    </span>
+    </p>
+
+    <p>
+        <input type="submit" ng-disabled="myform.name.$dirty && myform.name.Invalid ||
+        myform.email.$dirty && myform.email.$invalid"">
+    </p>
+</form>
+
+<script>
+    var app = angular.module('myapp', []);
+    app.controller('valicontrol', function($scope) {
+        $scope.name ='son';
+        $scope.email ='son@gmail.com';
+    });
+</script>
+</body>
+</html>

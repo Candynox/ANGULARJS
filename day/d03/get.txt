@@ -1,0 +1,5 @@
+{ "records": [
+    {"name":"minh anh", "phone":"011", "city":"saigon"},
+     {"name":"minh", "phone":"123", "city":"Hue"},
+      {"name":"thanh sang", "phone":"321", "city":"Danang"},
+]}
